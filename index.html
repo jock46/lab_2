@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Резюме фахівця з кібербезпеки та веброзробки">
+    <title>Резюме | Фахівець з кібербезпеки</title>
+</head>
+<body>
+
+    <!-- Шапка резюме -->
+    <header>
+        <h1>Свирида Роман</h1>
+        <p><strong>Спеціальність:</strong> Фахівець з кібербезпеки / Trainee Security Analyst</p>
+        <figure>
+            <img src="https://via.placeholder.com/150" alt="Фото профілю Свириди Романа" width="150" height="150">
+            <figcaption>Фото кандидата</figcaption>
+        </figure>
+        
+        <nav aria-label="Навігація по резюме">
+            <ul>
+                <li><a href="#about">Про мене</a></li>
+                <li><a href="#skills">Навички</a></li>
+                <li><a href="#experience">Досвід роботи</a></li>
+                <li><a href="#education">Освіта</a></li>
+                <li><a href="#contact">Контакти</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <hr>
+
+    <!-- Основний зміст резюме -->
+    <main>
+        <section id="about">
+            <h2>Про мене</h2>
+            <p>
+                Студент спеціальності «Кібербезпека». Маю знання мережевих архітектур,
+                принципів побудови комплексних систем захисту інформації (ISO/IEC 27001), 
+                а також навички розробки програмного забезпечення на Python і C#.
+            </p>
+        </section>
+
+        <section id="skills">
+            <h2>Технічні та професійні навички</h2>
+            <ul>
+                <li><strong>Мережева безпека:</strong> Моделювання топологій (Cisco Packet Tracer), налаштування протоколів WPA2/WPA3-Enterprise, серверів RADIUS.</li>
+                <li><strong>Стандарти безпеки:</strong> ISO/IEC 27001, ISO/IEC 27002, ISO/IEC 27005.</li>
+                <li><strong>Мови програмування:</strong> Python, C#, SQL.</li>
+                <li><strong>Інструменти:</strong> Git, PyCharm, Linux, VS Code, Wireshark.</li>
+            </ul>
+        </section>
+
+        <section id="experience">
+            <h2>Досвід роботи та проєкти</h2>
+            <article>
+                <h3>Розробка моделі безпечної бездротової інфраструктури</h3>
+                <p><em>Навчальний проєкт | 2026</em></p>
+                <ul>
+                    <li>Спроєктував та розгорнув топологію корпоративної бездротової мережі в Cisco Packet Tracer.</li>
+                    <li>Інтегрував централізовану автентифікацію через RADIUS-сервер з використанням WPA2-Enterprise.</li>
+                </ul>
+            </article>
+
+            <article>
+                <h3>Реалізація системи криптографічного захисту</h3>
+                <p><em>Власний проєкт | 2025 – 2026</em></p>
+                <ul>
+                    <li>Створив модульні алгоритми шифрування на Python із дотриманням стандартів PEP 8.</li>
+                    <li>Дослідив механізми захисту від атак повторного відтворення та аналізу частотності.</li>
+                </ul>
+            </article>
+        </section>
+
+        <section id="education">
+            <h2>Освіта</h2>
+            <table border="1">
+                <caption>Хронологія навчання</caption>
+                <thead>
+                    <tr>
+                        <th>Роки</th>
+                        <th>Навчальний заклад</th>
+                        <th>Спеціальність / Рівень</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2024 – 2028</td>
+                        <td>Національний університет «Львівська політехніка»</td>
+                        <td>Бакалавр, Кібербезпека</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="contact">
+            <h2>Зв'язатися зі мною</h2>
+            <form action="#" method="POST">
+                <div>
+                    <label for="fullName">Ваше ім'я:</label><br>
+                    <input type="text" id="fullName" name="fullName" placeholder="Олександр Іваненко" required>
+                </div>
+                <br>
+                <div>
+                    <label for="email">Ваш Email:</label><br>
+                    <input type="email" id="email" name="email" placeholder="example@domain.com" required>
+                </div>
+                <br>
+                <div>
+                    <label for="message">Повідомлення або пропозиція:</label><br>
+                    <textarea id="message" name="message" rows="4" cols="50" placeholder="Введіть ваше повідомлення..." required></textarea>
+                </div>
+                <br>
+                <button type="submit">Надіслати</button>
+            </form>
+        </section>
+    </main>
+
+    <hr>
+
+    <!-- Підвал сторінки -->
+    <footer>
+        <p>&copy; 2026 Свирида Роман. Усі права захищено.</p>
+        <p>Контакти: <a href="mailto:svyryda@example.com">svyryda@example.com</a> | Місто: Львів, Україна</p>
+    </footer>
+
+</body>
+</html>
