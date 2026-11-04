@@ -1,125 +1,291 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Резюме фахівця з кібербезпеки та веброзробки">
-    <title>Резюме | Фахівець з кібербезпеки</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Резюме | Свирида Іван</title>
+  <link rel="stylesheet" href="styles.css">
+  
+  <style>
+    /* ===== ТЕМНА ТЕМА ===== */
+    body.dark-theme {
+      background-color: #020617;
+      color: #f8fafc;
+    }
+    body.dark-theme .card {
+      background-color: #0f172a !important;
+      border: 1px solid #1e293b !important;
+      color: #f8fafc !important;
+    }
+    body.dark-theme h1, 
+    body.dark-theme h2, 
+    body.dark-theme h3, 
+    body.dark-theme strong {
+      color: #ffffff !important;
+    }
+    body.dark-theme p, 
+    body.dark-theme li, 
+    body.dark-theme label {
+      color: #cbd5e1 !important;
+    }
+    body.dark-theme input[type="text"] {
+      background-color: #1e293b !important;
+      color: #ffffff !important;
+      border-color: #334155 !important;
+    }
+    body.dark-theme .review-card {
+      background-color: #1e293b !important;
+      border: 1px solid #334155 !important;
+    }
+    body.dark-theme .review-card strong {
+      color: #60a5fa !important;
+    }
+    body.dark-theme .review-card p {
+      color: #cbd5e1 !important;
+    }
+
+    /* МОДАЛЬНЕ ВІКНО ДЛЯ ТЕМНОЇ ТЕМИ */
+    body.dark-theme .modal-content {
+      background: #1e293b !important;
+      color: #ffffff !important;
+      border: 1px solid #475569 !important;
+    }
+    body.dark-theme .modal-content h3 {
+      color: #ffffff !important;
+    }
+    body.dark-theme .modal-content p {
+      color: #94a3b8 !important;
+    }
+    body.dark-theme .modal-content label {
+      color: #f1f5f9 !important;
+    }
+    body.dark-theme .modal-content input,
+    body.dark-theme .modal-content textarea {
+      background-color: #0f172a !important;
+      color: #ffffff !important;
+      border: 1px solid #475569 !important;
+    }
+    body.dark-theme .modal-content input::placeholder,
+    body.dark-theme .modal-content textarea::placeholder {
+      color: #64748b !important;
+    }
+    body.dark-theme #close-modal-btn {
+      color: #94a3b8 !important;
+    }
+
+    /* ===== СВІТЛА ТЕМА ===== */
+    body.light-theme {
+      background-color: #f1f5f9;
+      color: #0f172a;
+    }
+    body.light-theme .card {
+      background-color: #ffffff !important;
+      border: 1px solid #e2e8f0 !important;
+      color: #0f172a !important;
+    }
+    body.light-theme h1, 
+    body.light-theme h2, 
+    body.light-theme h3, 
+    body.light-theme strong {
+      color: #0f172a !important;
+    }
+    body.light-theme p, 
+    body.light-theme li, 
+    body.light-theme label {
+      color: #334155 !important;
+    }
+    body.light-theme input[type="text"] {
+      background-color: #ffffff !important;
+      color: #0f172a !important;
+      border-color: #cbd5e1 !important;
+    }
+    body.light-theme .review-card {
+      background-color: #f8fafc !important;
+      border: 1px solid #e2e8f0 !important;
+    }
+    body.light-theme .review-card strong {
+      color: #2563eb !important;
+    }
+    body.light-theme .review-card p {
+      color: #475569 !important;
+    }
+
+    /* МОДАЛЬНЕ ВІКНО ДЛЯ СВІТЛОЇ ТЕМИ */
+    body.light-theme .modal-content {
+      background: #ffffff !important;
+      color: #0f172a !important;
+      border: 1px solid #e2e8f0 !important;
+    }
+    body.light-theme .modal-content h3 {
+      color: #0f172a !important;
+    }
+    body.light-theme .modal-content p {
+      color: #64748b !important;
+    }
+    body.light-theme .modal-content label {
+      color: #1e293b !important;
+    }
+    body.light-theme .modal-content input,
+    body.light-theme .modal-content textarea {
+      background-color: #f8fafc !important;
+      color: #0f172a !important;
+      border: 1px solid #cbd5e1 !important;
+    }
+    body.light-theme .modal-content input::placeholder,
+    body.light-theme .modal-content textarea::placeholder {
+      color: #94a3b8 !important;
+    }
+    body.light-theme #close-modal-btn {
+      color: #64748b !important;
+    }
+
+    /* ===== ЗАГАЛЬНІ СТИЛІ ===== */
+    #main-header h1 {
+      color: #ffffff !important;
+    }
+    #main-header p {
+      color: #cbd5e1 !important;
+    }
+
+    .review-card {
+      padding: 14px;
+      margin-bottom: 12px;
+      border-radius: 12px;
+    }
+
+    /* ===== БАЗОВІ СТИЛІ МОДАЛЬНОГО ВІКНА ===== */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    .modal-content {
+      padding: 24px;
+      border-radius: 16px;
+      max-width: 420px;
+      width: 90%;
+      position: relative;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+    }
+    .modal-content h3 {
+      font-size: 1.25rem;
+      margin-top: 0;
+      margin-bottom: 8px;
+    }
+    .modal-content p {
+      font-size: 0.85rem;
+      margin-bottom: 16px;
+    }
+    .modal-content label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      display: block;
+      margin-bottom: 4px;
+    }
+    .modal-content input,
+    .modal-content textarea {
+      width: 100%;
+      padding: 8px 12px;
+      border-radius: 6px;
+      box-sizing: border-box;
+      outline: none;
+    }
+  </style>
 </head>
-<body>
+<body class="dark-theme">
 
-    <!-- Шапка резюме -->
-    <header>
-        <h1>Свирида Іван</h1>
-        <p><strong>Спеціальність:</strong> Фахівець з кібербезпеки / Trainee Security Analyst</p>
+  <!-- Кнопка теми -->
+  <div style="text-align: right; padding: 16px; max-width: 1000px; margin: 0 auto;">
+    <button id="theme-toggle-btn" class="btn">☀️ Денний режим (07:00–21:00)</button>
+  </div>
+
+  <!-- Шапка сайту -->
+  <header id="main-header" style="max-width: 1000px; margin: 0 auto 24px auto; padding: 24px; border-radius: 16px;">
+    <div class="header-content">
+      <span class="badge" style="background: #2563eb; color: #fff; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem;">Лабораторна робота №4</span>
+      <h1 style="margin-top: 8px;">Свирида Іван</h1>
+      <p style="color: #94a3b8; font-style: italic;">Студент кафедри БІТ | Кібербезпека</p>
+    </div>
+  </header>
+
+  <!-- Основний макет -->
+  <main class="container">
+    <div class="layout-grid">
+      
+      <!-- Бокова панель -->
+      <aside class="card sidebar">
+        <h2>Інформація</h2>
+        <ul class="contact-list">
+          <li><strong>Спеціальність:</strong> Кібербезпека</li>
+          <li><strong>Університет:</strong> НУ «ЛП»</li>
+          <li><strong>Група:</strong> КБ-201</li>
+        </ul>
+        <hr class="divider">
+        <h3>Пошук</h3>
+        <form class="search-form" onsubmit="event.preventDefault();">
+          <input type="text" placeholder="Пошук...">
+          <button type="submit" class="btn" style="margin-top: 8px;">Знайти</button>
+        </form>
+      </aside>
+
+      <!-- Основна область -->
+      <section class="card content-area">
+        <section class="section-block">
+          <h2>Про мене</h2>
+          <p>Студент кафедри безпеки інформаційних технологій. Вивчаю мережеві технології, веброзробку та захист інформації.</p>
+        </section>
+
+        <!-- Секція для відгуків (Варіант 22) -->
+        <section class="section-block">
+          <h2>💬 Відгуки роботодавців (Fetch API — Варіант 22)</h2>
+          <div id="reviews-container"></div>
+        </section>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Футер з системною інформацією z localStorage -->
+  <footer class="footer" style="margin-top: 32px; padding: 24px; text-align: center;">
+    <p>&copy; 2026 Іван Свирида. Лабораторна робота №4.</p>
+    <div id="footer-sys-info" style="font-family: monospace; font-size: 0.8rem; margin-top: 12px; color: #94a3b8; background: #0f172a; padding: 12px; border-radius: 8px; max-width: 600px; margin-left: auto; margin-right: auto; text-align: left;"></div>
+  </footer>
+
+  <!-- Модальне вікно з формою Formspree -->
+  <div id="contact-modal" class="modal-overlay">
+    <div class="modal-content">
+      <button id="close-modal-btn" style="position: absolute; top: 12px; right: 12px; background: none; border: none; font-size: 1.4rem; cursor: pointer;">✕</button>
+      <h3>Зворотний зв'язок</h3>
+      <p>Форма з'явилася автоматично через 1 хвилину перебування на сайті.</p>
+      
+      <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" style="display: flex; flex-direction: column; gap: 12px;">
+        <div>
+          <label>Ім'я:</label>
+          <input type="text" name="name" required placeholder="Іван Свирида">
+        </div>
+        <div>
+          <label>Email:</label>
+          <input type="email" name="email" required placeholder="ivan@example.com">
+        </div>
+        <div>
+          <label>Телефон:</label>
+          <input type="tel" name="phone" required placeholder="+380...">
+        </div>
+        <div>
+          <label>Повідомлення:</label>
+          <textarea name="message" required rows="3" placeholder="Ваше повідомлення..."></textarea>
+        </div>
         
-        
-        <nav aria-label="Навігація по резюме">
-            <ul>
-                <li><a href="#about">Про мене</a></li>
-                <li><a href="#skills">Навички</a></li>
-                <li><a href="#experience">Досвід роботи</a></li>
-                <li><a href="#education">Освіта</a></li>
-                <li><a href="#contact">Контакти</a></li>
-            </ul>
-        </nav>
-    </header>
+        <button type="submit" class="btn" style="margin-top: 8px; background: #2563eb; color: #fff; border: none; padding: 10px; border-radius: 8px; cursor: pointer; font-weight: bold;">Надіслати</button>
+      </form>
+    </div>
+  </div>
 
-    <hr>
-
-    <!-- Основний зміст резюме -->
-    <main>
-        <section id="about">
-            <h2>Про мене</h2>
-            <p>
-                Студент спеціальності «Кібербезпека». Маю знання мережевих архітектур,
-                принципів побудови комплексних систем захисту інформації (ISO/IEC 27001), 
-                а також навички розробки програмного забезпечення на Python і C#.
-            </p>
-        </section>
-
-        <section id="skills">
-            <h2>Технічні та професійні навички</h2>
-            <ul>
-                <li><strong>Мережева безпека:</strong> Моделювання топологій (Cisco Packet Tracer), налаштування протоколів WPA2/WPA3-Enterprise, серверів RADIUS.</li>
-                <li><strong>Стандарти безпеки:</strong> ISO/IEC 27001, ISO/IEC 27002, ISO/IEC 27005.</li>
-                <li><strong>Мови програмування:</strong> Python, C#, SQL.</li>
-                <li><strong>Інструменти:</strong> Git, PyCharm, Linux, VS Code, Wireshark.</li>
-            </ul>
-        </section>
-
-        <section id="experience">
-            <h2>Досвід роботи та проєкти</h2>
-            <article>
-                <h3>Розробка моделі безпечної бездротової інфраструктури</h3>
-                <p><em>Навчальний проєкт | 2026</em></p>
-                <ul>
-                    <li>Спроєктував та розгорнув топологію корпоративної бездротової мережі в Cisco Packet Tracer.</li>
-                    <li>Інтегрував централізовану автентифікацію через RADIUS-сервер з використанням WPA2-Enterprise.</li>
-                </ul>
-            </article>
-
-            <article>
-                <h3>Реалізація системи криптографічного захисту</h3>
-                <p><em>Власний проєкт | 2025 – 2026</em></p>
-                <ul>
-                    <li>Створив модульні алгоритми шифрування на Python із дотриманням стандартів PEP 8.</li>
-                    <li>Дослідив механізми захисту від атак повторного відтворення та аналізу частотності.</li>
-                </ul>
-            </article>
-        </section>
-
-        <section id="education">
-            <h2>Освіта</h2>
-            <table border="1">
-                <caption>Хронологія навчання</caption>
-                <thead>
-                    <tr>
-                        <th>Роки</th>
-                        <th>Навчальний заклад</th>
-                        <th>Спеціальність / Рівень</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>2024 – 2028</td>
-                        <td>Національний університет «Львівська політехніка»</td>
-                        <td>Бакалавр, Кібербезпека</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-
-        <section id="contact">
-            <h2>Зв'язатися зі мною</h2>
-            <form action="#" method="POST">
-                <div>
-                    <label for="fullName">Ваше ім'я:</label><br>
-                    <input type="text" id="fullName" name="fullName" placeholder="Олександр Іваненко" required>
-                </div>
-                <br>
-                <div>
-                    <label for="email">Ваш Email:</label><br>
-                    <input type="email" id="email" name="email" placeholder="example@domain.com" required>
-                </div>
-                <br>
-                <div>
-                    <label for="message">Повідомлення або пропозиція:</label><br>
-                    <textarea id="message" name="message" rows="4" cols="50" placeholder="Введіть ваше повідомлення..." required></textarea>
-                </div>
-                <br>
-                <button type="submit">Надіслати</button>
-            </form>
-        </section>
-    </main>
-
-    <hr>
-
-    <!-- Підвал сторінки -->
-    <footer>
-        <p>&copy; 2026 Свирида Іван. Усі права захищено.</p>
-        <p>Контакти: <a href="mailto:svyryda@example.com">svyryda@example.com</a> | Місто: Львів, Україна</p>
-    </footer>
-
+  <script src="script.js"></script>
 </body>
 </html>
